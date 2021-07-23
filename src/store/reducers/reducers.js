@@ -1,4 +1,4 @@
-import { fetchProductsPendingAction, fetchProductsSuccessAction, initPhoneListAction, selectPhoneAction } from "../../common/strings"
+import { fetchProductsErrorAction, fetchProductsPendingAction, initPhoneListAction, selectPhoneAction } from "../../common/strings"
 
 const initialState = {
     phoneList: null,
@@ -25,6 +25,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 selected: action.phone
+            }
+        case fetchProductsErrorAction:
+            return {
+                ...state,
+                error: true
             }
         default:
             return state
