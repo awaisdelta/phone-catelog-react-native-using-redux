@@ -5,7 +5,7 @@ import Header from '../components/header'
 import { fetchPhonesList, selectPhone } from '../store/actions/actions'
 import PhoneItem from '../components/phoneItem'
 
-const Catelog = (props) => {
+const Catalogue = (props) => {
 
     const dispatch = useDispatch()
 
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     }
 })
-export default Catelog
+export default Catalogue
