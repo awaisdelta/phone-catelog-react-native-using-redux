@@ -21,7 +21,7 @@ const Catelog = (props) => {
     }
 
     return (
-        <View style={styles.mainContainers}>
+        <View style={styles.mainContainer}>
             <Header title='Catalog' />
             {
                 store.phoneList ?
