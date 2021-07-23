@@ -110,6 +110,9 @@ For testing I am using detox following this link. https://github.com/wix/Detox/b
 # Run following command for E2E testing
 `detox test --configuration android`
 
+## APK file 
+https://drive.google.com/file/d/1vPTgsr2vC5_CUUPVYs4uBSuR2I-Vb4QC/view?usp=sharing
+
 Made with :heart: by <a href="https://github.com/AwaisRai" target="_blank">AwaisRai</a>
 
 &#xa0;
