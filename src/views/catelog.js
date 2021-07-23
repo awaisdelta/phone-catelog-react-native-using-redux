@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
-import { View, Text, FlatList, TouchableOpacity, Image, ActivityIndicator, StyleSheet } from 'react-native'
+import { View, Text, FlatList, ActivityIndicator, StyleSheet } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import { SERVER_URL } from '../common/config'
 import Header from '../components/header'
 import { fetchPhonesList, selectPhone } from '../store/actions/actions'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import PhoneItem from '../components/phoneItem'
 
 const Catelog = (props) => {
 
@@ -22,28 +21,14 @@ const Catelog = (props) => {
     }
 
     return (
-        <View style={{flex:1}}>
+        <View style={styles.mainContainers}>
             <Header title='Catalog' />
             {
                 store.phoneList ?
                     <FlatList
                         data={store.phoneList} keyExtractor={item => item.id}
                         renderItem={({ item }) => {
-                            return (
-                                <TouchableOpacity onPress={() => onPress(item)}>
-                                    <View style={styles.container}>
-                                        <View style={styles.imageContainer}>
-                                            <Image source={{ uri: `${SERVER_URL}/images/${item.imageFileName}` }}
-                                                resizeMode="contain" style={styles.image}>
-                                            </Image>
-                                        </View>
-                                        <Text style={styles.text}>{item.name}</Text>
-                                        <View style={styles.icon}>
-                                            <Icon name='chevron-right' size={30} color='gray' />
-                                        </View>
-                                    </View>
-                                </TouchableOpacity>
-                            )
+                            return <PhoneItem  onPress={onPress} item={item} />
                         }}
                     />
                     :
@@ -57,30 +42,8 @@ const Catelog = (props) => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
-        padding: 10,
-        alignItems: 'center',
-        borderBottomColor: 'lightgray',
-        borderBottomWidth: 1
-    },
-    image: {
-        height: 72,
-        width: 72
-    },
-    imageContainer: {
-        borderColor: 'blue',
-        borderWidth: 1,
-        padding: 15,
-        borderRadius: 70,
-    },
-    text: {
-        fontSize: 24,
-        marginLeft: 10
-    },
-    icon: {
-        position: 'absolute',
-        right: 10
+    mainContainer: {
+        flex: 1
     },
     loaderContainer: {
         flex: 1,
