@@ -1,6 +1,6 @@
 import axios from "axios"
 import { SERVER_URL } from "../../common/config"
-import { initPhoneListAction, selectPhoneAction } from "../../common/strings"
+import { fetchProductsErrorAction, fetchProductsPendingAction, initPhoneListAction, selectPhoneAction } from "../../common/strings"
 
 const fetchProductsSuccess = (phoneList) => {
     return {
@@ -11,13 +11,12 @@ const fetchProductsSuccess = (phoneList) => {
 
 const fetchProductsError = (error) => {
     return {
-        type: initPhoneListAction,
+        type: fetchProductsErrorAction,
         error: error
     }
 }
 
 const selectPhone = (phone) => {
-    // console.warn('insid-action', phone);
     return {
         type: selectPhoneAction,
         phone
@@ -27,9 +26,10 @@ const selectPhone = (phone) => {
 const fetchPhonesList = async (dispatch) => {
     axios.get(`${SERVER_URL}/phones`).then(res => {
         if (res.data.success) {
-            dispatch(fetchProductsSuccess(res.data.data));
+            return dispatch(fetchProductsSuccess(res.data.data));
         }
-    })
+        dispatch(fetchProductsError(error))
+    }).catch(error => dispatch(fetchProductsError(error)))
 }
 
 export { fetchProductsError, fetchProductsSuccess, fetchPhonesList, selectPhone }
