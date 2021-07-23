@@ -105,6 +105,10 @@ $ npm start
 $ nxp react-native run-android
 ```
 
+## Testing
+For testing I am using detox following this link. https://github.com/wix/Detox/blob/master/docs/Introduction.GettingStarted.md
+# Run following command for E2E testing
+`detox test --configuration android`
 
 Made with :heart: by <a href="https://github.com/AwaisRai" target="_blank">AwaisRai</a>
 
