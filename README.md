@@ -61,6 +61,7 @@ The following tools were used in this project:
 ## :white_check_mark: Requirements ##
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+
 You need to setup enviornment for `react-native` not already done. 
 You can find instructions on <a href="https://reactnative.dev/docs/environment-setup" target="_blank">https://reactnative.dev/docs/environment-setup</a>
 
