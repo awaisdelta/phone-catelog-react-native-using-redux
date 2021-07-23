@@ -61,7 +61,29 @@ The following tools were used in this project:
 ## :white_check_mark: Requirements ##
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
-You need to setup enviornment for `react-native` not already done. You can find instructions on <a href="https://reactnative.dev/docs/environment-setup" target="_blank">https://reactnative.dev/docs/environment-setup</a>
+You need to setup enviornment for `react-native` not already done. 
+You can find instructions on <a href="https://reactnative.dev/docs/environment-setup" target="_blank">https://reactnative.dev/docs/environment-setup</a>
+
+## Setup Server ##
+```bash
+# Clone server project
+$ git clone https://github.com/awaisdelta/phone-catelog-server
+
+# Access
+$ cd phone-catelog-server
+
+# Install dependencies
+$ npm install
+
+# Run the project
+$ npm start
+
+# The server will initialize in the <http://localhost:3000>
+
+#Note: You need to update `SERVER_URL` inside `src/common/config.js` to fetch data from local-server
+
+```
+
 
 ## :checkered_flag: Starting ##
 
