@@ -8,7 +8,7 @@ const iconSize = 30
 const PhoneItem = (props) => {
     const { onPress, item } = props;
     return (
-        <TouchableOpacity onPress={()=>onPress(item)}>
+        <TouchableOpacity onPress={()=>onPress(item)} testID={"item-"+item.id}>
             <View style={styles.container}>
                 <View style={styles.imageContainer}>
                     <Image source={{ uri: `${SERVER_URL}/images/${item.imageFileName}` }}

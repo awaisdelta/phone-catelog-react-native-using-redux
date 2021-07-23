@@ -7,7 +7,7 @@ const Header = (props) => {
         <View style={styles.container}>
             {
                 props.showBackButton && (
-                    <TouchableOpacity onPress={props.backAction}>
+                    <TouchableOpacity onPress={props.backAction} testID="header-back-btn">
                         <View style={styles.icon}>
                             <Icon name='chevron-left' size={30} color='gray' />
                         </View>

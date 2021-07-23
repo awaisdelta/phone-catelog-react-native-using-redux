@@ -10,7 +10,7 @@ const PhoneView = (props) => {
     const phone = store.selected;
 
     return (
-        <ScrollView style={{ flex: 1 }}>
+        <ScrollView style={{ flex: 1 }} testID="detail-page">
             <Header title='Details' showBackButton={true} backAction={() => props.navigation.pop()} />
             <View style={styles.imageContainer}>
                 <Text style={styles.name}>{phone.name}</Text>

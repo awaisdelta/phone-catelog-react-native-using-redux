@@ -22,10 +22,10 @@ const Catalogue = (props) => {
 
     return (
         <View style={styles.mainContainer}>
-            <Header title='Catalog' />
+            <Header title='Catalogue' />
             {
                 store.phoneList ?
-                    <FlatList
+                    <FlatList testID="catalogueList"
                         data={store.phoneList} keyExtractor={item => item.id}
                         renderItem={({ item }) => {
                             return <PhoneItem  onPress={onPress} item={item} />
