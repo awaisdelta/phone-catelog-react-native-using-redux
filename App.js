@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
-import { View, Text } from 'react-native'
-import { Provider, useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import thunk from "redux-thunk";
-import { fetchPhonesList } from './src/store/actions/actions';
 import rootReducer from './src/store/reducers/reducers';
 import Catelog from './src/views/catelog';
 import PhoneView from './src/views/phoneView';
